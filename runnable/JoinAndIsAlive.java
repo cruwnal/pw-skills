@@ -30,7 +30,11 @@ class JoinAndIsAlive implements Runnable {
          Thread t1 = new Thread(obj);
 
         try {
+            //isalive() will give you the info regarding thread is alive or not
+
+            System.out.println(t1.isAlive());
             t1.start();
+            System.out.println(t1.isAlive());
             t1.join();
         }catch(Exception e){
             System.out.println(e.toString());
