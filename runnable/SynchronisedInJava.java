@@ -4,18 +4,19 @@ package com.runnable;
 class Car implements Runnable {
 
     @Override
-    synchronized  public void run() {
+      public void run() {
 
         try{
             System.out.println(Thread.currentThread().getName()+" Has entered the parking lots");
             Thread.sleep(2000);
-            System.out.println(Thread.currentThread().getName()+" Get into car to drive");
-            Thread.sleep(2000);
-            System.out.println(Thread.currentThread().getName()+" Started to drive the car ");
-            Thread.sleep(2000);
-            System.out.println(Thread.currentThread().getName()+" came back and park the car ");
-            Thread.sleep(2000);
-
+           synchronized (this){
+                System.out.println(Thread.currentThread().getName() + " Get into car to drive");
+                Thread.sleep(2000);
+                System.out.println(Thread.currentThread().getName() + " Started to drive the car ");
+                Thread.sleep(2000);
+                System.out.println(Thread.currentThread().getName() + " came back and park the car ");
+                Thread.sleep(2000);
+            }
         }catch(Exception e){
             System.out.println(e.toString());
 
