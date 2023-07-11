@@ -18,7 +18,7 @@ class Car implements Runnable {
                 Thread.sleep(2000);
             }
         }catch(Exception e){
-            System.out.println(e.toString());
+            System.out.println(e.getMessage());
 
         }
 
